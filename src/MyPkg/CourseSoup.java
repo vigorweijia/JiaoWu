@@ -3,7 +3,7 @@ package MyPkg;
 import java.util.ArrayList;
 
 public class CourseSoup {
-    static ArrayList<CourseInfo> CourseList;
+    public static ArrayList<CourseInfo> CourseList;
     public static void init() {
         CourseList = new ArrayList<CourseInfo>();
     }
