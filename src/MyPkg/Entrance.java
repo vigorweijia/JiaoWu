@@ -19,8 +19,8 @@ public class Entrance {
 
         int length = CourseSoup.length();
         System.out.println("length: " + length);
-        for(int i = 0; i < length; i++) {
-            System.out.println(CourseSoup.CourseList.get(i));
+        for(int j = 0; j < length; j++) {
+            System.out.println(CourseSoup.CourseList.get(j));
         }
     }
 }
