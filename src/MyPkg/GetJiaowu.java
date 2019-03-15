@@ -268,11 +268,11 @@ public class GetJiaowu {
                                         else if(str[i].contains("3-")) time = MorningCourse.CourseThird;
                                         if(time == -1) continue;
                                         switch (str[i-1]) {
-                                            case "周一": MorningCourse.Monday = time; break;
-                                            case "周二": MorningCourse.Tuesday = time; break;
-                                            case "周三": MorningCourse.Wednesday = time; break;
-                                            case "周四": MorningCourse.Thrusday = time; break;
-                                            case "周五": MorningCourse.Friday = time; break;
+                                            case "周一": if(time < MorningCourse.Monday) MorningCourse.Monday = time; break;
+                                            case "周二": if(time < MorningCourse.Tuesday) MorningCourse.Tuesday = time; break;
+                                            case "周三": if(time < MorningCourse.Wednesday) MorningCourse.Wednesday = time; break;
+                                            case "周四": if(time < MorningCourse.Thrusday) MorningCourse.Thrusday = time; break;
+                                            case "周五": if(time < MorningCourse.Friday) MorningCourse.Friday = time; break;
                                         }
                                     }
                                 }
@@ -287,11 +287,11 @@ public class GetJiaowu {
                         //callback.onSuccess(response);
 
                         //更新没有早课的情况
-                        if(MorningCourse.Monday == -1) MorningCourse.Monday = MorningCourse.CourseNone;
-                        if(MorningCourse.Tuesday == -1) MorningCourse.Tuesday = MorningCourse.CourseNone;
-                        if(MorningCourse.Wednesday == -1) MorningCourse.Wednesday = MorningCourse.CourseNone;
-                        if(MorningCourse.Thrusday == -1) MorningCourse.Thrusday = MorningCourse.CourseNone;
-                        if(MorningCourse.Friday == -1) MorningCourse.Friday = MorningCourse.CourseNone;
+                        if(MorningCourse.Monday == 99) MorningCourse.Monday = MorningCourse.CourseNone;
+                        if(MorningCourse.Tuesday == 99) MorningCourse.Tuesday = MorningCourse.CourseNone;
+                        if(MorningCourse.Wednesday == 99) MorningCourse.Wednesday = MorningCourse.CourseNone;
+                        if(MorningCourse.Thrusday == 99) MorningCourse.Thrusday = MorningCourse.CourseNone;
+                        if(MorningCourse.Friday == 99) MorningCourse.Friday = MorningCourse.CourseNone;
                         System.out.println("Mon:" + MorningCourse.Monday);
                         System.out.println("Tue:" + MorningCourse.Tuesday);
                         System.out.println("Wed:" + MorningCourse.Wednesday);
